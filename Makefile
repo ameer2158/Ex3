@@ -9,13 +9,13 @@ OBJECT_find=find.o
 all: ameer find
 	 
 ameer: ameerd $(OBJECTS_MAIN)
-	$(CC) $(OBJECTS_MAIN) -o ameer ./libameer.so
+	$(CC) $(OBJECTS_MAIN) -o ameerd ./libameer.so
 	
 ameerd: $(OBJECT_ameer)
 	$(CC) -shared -o libameer.so $(OBJECT_ameer)
 
 ameer.o: ameer.c
-	$(CC) $(FLAGS) -fPIC -c ameert.c
+	$(CC) $(FLAGS) -fPIC -c ameer.c
 
 $(OBJECTS_MAIN): main.c ex3.h
 	$(CC) $(FLAGS) -fPIC -c main.c
